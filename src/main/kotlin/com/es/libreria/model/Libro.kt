@@ -1,5 +1,6 @@
 ﻿package com.es.libreria.model
 
+import com.fasterxml.jackson.annotation.JsonBackReference
 import jakarta.persistence.*
 import java.time.LocalDate
 
@@ -20,7 +21,8 @@ data class Libro(
 
     var precio: Double,
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "autor_id", nullable = false)
+    @JsonBackReference
     var autor: Autor
 )
