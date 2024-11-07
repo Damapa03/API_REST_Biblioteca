@@ -1,4 +1,6 @@
-﻿import jakarta.persistence.*
+﻿package com.es.libreria.model
+
+import jakarta.persistence.*
 import java.time.LocalDate
 
 @Entity
@@ -14,8 +16,7 @@ data class Libro(
     var genero: String,
 
     @Column(name = "anio_publicacion")
-    @Temporal(TemporalType.DATE)
-    var anioPublicacion: LocalDate,
+    var anioPublicacion: Int,
 
     var precio: Double,
 
